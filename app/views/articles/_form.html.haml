@@ -1,0 +1,7 @@
+= simple_form_for @article do |f|
+  = f.input :title, label: 'Title', input_html: { class: 'form-control' }
+  = f.input :content, label: 'Content', input_html: { class: 'form-control' }
+  = f.collection_select :category_id, Category.all, :id, :name, { prompt: "Choose a Category" }
+  %br/
+  %br/
+  = f.submit :submit, class: 'btn btn-primary'
